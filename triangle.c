@@ -16,20 +16,17 @@ double round_number(double value, int symbols_after_comma) {
 	return value / exponent;
 }
 
-int main(void) 
-{
+int main(void)  {
 	double first;
 	double second;
 	double third;
 	scanf("%lf %lf %lf", &first, &second, &third);
 	if ((round_number(first*first + second*second, MEASUREMENT_ERROR) == round_number(third*third, MEASUREMENT_ERROR)) || 
 	    (round_number(first*first + third*third, MEASUREMENT_ERROR) == round_number(second*second, MEASUREMENT_ERROR)) ||
-	    (round_number(second*second + third*third, MEASUREMENT_ERROR) == round_number(first*first, MEASUREMENT_ERROR)))
-	{
+	    (round_number(second*second + third*third, MEASUREMENT_ERROR) == round_number(first*first, MEASUREMENT_ERROR))) {
 		puts("True");
 	}
-	else 
-	{
+	else {
 		puts("False");
 	}
 }
