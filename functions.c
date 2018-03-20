@@ -16,7 +16,7 @@ void reduce(
 	size_t size,
 	size_t count,
 	void (*reduce_func)(void *first, void *second, void* result)
-); 
+);
 
 int filter_int(void *element) {
 	int int_element = *(int*)element;
@@ -74,16 +74,13 @@ void reduce(
 	void (*reduce_func)(void *first, void *second, void *result)
 ) {
 	char *from_ptr = (char*)from;
-	char *to_ptr = (char*)to;
 	if (size == 0) {
 		return;
 	}
-	memcpy(to_ptr, from_ptr, size);
-	void* temp = calloc(1, size);
+	memcpy(to, from_ptr, size);
 	
 	for (int i = 1; i < count; i++)	{
-		reduce_func(from_ptr + size*i, to_ptr, to);
+		reduce_func(from_ptr + size*i, to, to);
 	}
-	free(temp);
 }
 
