@@ -2,3 +2,5 @@ a.out
 .idea
 cmake-build-debug
 python api/build
+xxd/a.out
+xxd/*.o
